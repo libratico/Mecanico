@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Fix AI - Asistente de Mecánica Automotriz</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for a clean, modern look -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dark-mode">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="ph-fill ph-wrench"></i>
+                </div>
+                <div class="title-container">
+                    <h1>Dr.Fix AI</h1>
+                    <p class="subtitle">Tu asistente de mecánica automotriz</p>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-button" aria-label="Cambiar tema">
+                <i class="ph-fill ph-sun"></i>
+            </button>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-container" id="chat-container">
+            <!-- Welcome Screen (Only visible when chat is empty) -->
+            <div class="welcome-screen" id="welcome-screen">
+                <div class="welcome-icon">
+                    <i class="ph-fill ph-wrench"></i>
+                </div>
+                <h2>¿Cómo puedo ayudarte hoy?</h2>
+                <p>Soy Dr.Fix AI, tu asistente experto en mecánica automotriz. Pregúntame sobre diagnósticos, mantenimiento o cualquier problema con tu vehículo.</p>
+                
+                <div class="suggestions-grid">
+                    <button class="suggestion-card" onclick="setInput('Mi carro hace un ruido extraño al frenar')">
+                        <i class="ph ph-car-profile"></i>
+                        <div class="text">
+                            <h3>Diagnóstico de problemas</h3>
+                            <p>Mi carro hace un ruido extraño al frenar</p>
+                        </div>
+                    </button>
+                    <button class="suggestion-card" onclick="setInput('¿Cada cuánto debo cambiar el aceite?')">
+                        <i class="ph ph-gear"></i>
+                        <div class="text">
+                            <h3>Mantenimiento preventivo</h3>
+                            <p>¿Cada cuánto debo cambiar el aceite?</p>
+                        </div>
+                    </button>
+                    <button class="suggestion-card" onclick="setInput('¿Qué significa la luz de check engine?')">
+                        <i class="ph ph-question"></i>
+                        <div class="text">
+                            <h3>Consultas generales</h3>
+                            <p>¿Qué significa la luz de check engine?</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Messages will be injected here -->
+            <div class="messages-list" id="messages-list"></div>
+            
+            <div class="loading-indicator hidden" id="loading-indicator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="input-area">
+            <div class="input-container">
+                <textarea id="user-input" placeholder="Escribe tu consulta sobre mecánica automotriz..." rows="1"></textarea>
+                <button id="send-btn" aria-label="Enviar mensaje">
+                    <i class="ph-fill ph-paper-plane-right"></i>
+                </button>
+            </div>
+            <p class="disclaimer">Dr.Fix AI puede cometer errores. Verifica la información importante.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
